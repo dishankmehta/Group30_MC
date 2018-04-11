@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Assignment3</string>
+    <string name="collectData">CollectData</string>
+    <string name="run">Run</string>
+    <string name="walk">Walk</string>
+    <string name="jog">Jog</string>
+</resources>
