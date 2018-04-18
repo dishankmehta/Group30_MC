@@ -4,4 +4,12 @@
     <string name="run">Run</string>
     <string name="walk">Walk</string>
     <string name="jog">Jog</string>
+    <string name="ml_algo_button">Run ML Algorithm</string>
+    <string name="svm_type_hint">SVM type</string>
+    <string name="kernel_type_hint">Kernel type</string>
+    <string name="gamma_hint">Gamma</string>
+    <string name="degree_hint">Degree</string>
+    <string name="parmas_button">Set Parameters</string>
+    <string name="train_button">Train</string>
+    <string name="test_button">Test</string>
 </resources>

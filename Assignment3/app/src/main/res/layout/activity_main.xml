@@ -10,13 +10,17 @@
         android:id="@+id/btn_collectData"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:text="@string/collectData"
+        app:layout_constraintBottom_toTopOf="@+id/btn_ml_activity"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rg_Activity" />
+        app:layout_constraintTop_toBottomOf="@+id/rg_Activity"
+        app:layout_constraintVertical_bias="0.212" />
 
     <RadioGroup
         android:id="@+id/rg_Activity"
@@ -68,11 +72,29 @@
 
     </RadioGroup>
 
+
     <WebView
         android:id="@+id/wv_graphView"
         android:layout_width="368dp"
         android:layout_height="291dp"
         android:layout_marginStart="8dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btn_collectData" />
+        app:layout_constraintTop_toBottomOf="@id/btn_ml_activity" />
+
+    <Button
+        android:id="@+id/btn_ml_activity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="83dp"
+        android:layout_marginStart="84dp"
+        android:layout_marginTop="32dp"
+        android:text="@string/ml_algo_button"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/rg_Activity"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_collectData" />
+
+
 </android.support.constraint.ConstraintLayout>
