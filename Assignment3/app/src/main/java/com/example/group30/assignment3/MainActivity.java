@@ -9,12 +9,19 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.webkit.WebChromeClient;
+import android.webkit.WebSettings;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
 import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import com.example.group30.assignment3.data.SensorDataHelper;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.io.File;
 
@@ -25,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
     private RadioButton rb_walk, rb_jog, rb_run;
     private Button btn_collectData;
     private SensorDataHelper sensorDataHelper;
+    private WebView graphPlot;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Delegate.theMainActivity = this;
 
+        graphPlot = findViewById(R.id.wv_graphView);
         rg_Activity = findViewById(R.id.rg_Activity);
         rb_walk = findViewById(R.id.rb_walk);
         rb_jog = findViewById(R.id.rb_jog);
@@ -79,6 +88,34 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+
+
+        graphPlot.setWebContentsDebuggingEnabled(true);
+
+        graphPlot.setWebChromeClient(new WebChromeClient());
+
+        // enable JS
+        WebSettings webSettings = graphPlot.getSettings();
+        webSettings.setJavaScriptEnabled(true);
+        webSettings.setAllowUniversalAccessFromFileURLs(true);
+        webSettings.setDomStorageEnabled(true);
+
+        graphPlot.setWebViewClient(new WebViewClient() {
+            public void onPageFinished(WebView view, String url) {
+                Log.d("in js","hello");
+                JSONObject jsonObj = null;
+                try {
+                    jsonObj = new JSONObject("{\"phonetype\":\"N95\",\"cat\":\"WP\"}");
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+                graphPlot.evaluateJavascript("plotgraph("+jsonObj.toString()+")", null);
+            }
+        });
+
+
+
+        graphPlot.loadUrl("file:///android_asset/www/plotlyEX.html");
 
 
     }

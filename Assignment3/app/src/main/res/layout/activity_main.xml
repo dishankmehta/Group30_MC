@@ -67,4 +67,12 @@
             app:layout_constraintTop_toTopOf="parent" />
 
     </RadioGroup>
+
+    <WebView
+        android:id="@+id/wv_graphView"
+        android:layout_width="368dp"
+        android:layout_height="291dp"
+        android:layout_marginStart="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_collectData" />
 </android.support.constraint.ConstraintLayout>
