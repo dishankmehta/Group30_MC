@@ -69,7 +69,20 @@ public class SensorHandlerClass extends Service implements SensorEventListener {
         index = 1;
         contentValues = new ContentValues();
         String label = intent.getExtras().getString("label");
-        contentValues.put(SensorDataContract.SensorDataTable.COLUMN_ACTIVITY_LABEL, label);
+        String label_num = null;
+        if (label != null) {
+            switch(label){
+                case "Walk":
+                    label_num = "0";
+                    break;
+                case "Jog":
+                    label_num = "1";
+                    break;
+                case "Run":
+                    label_num = "2";
+            }
+        }
+        contentValues.put(SensorDataContract.SensorDataTable.COLUMN_ACTIVITY_LABEL, label_num);
         // We want this service to continue running until it is explicitly
         // stopped, so return sticky.
         //k = 0;
