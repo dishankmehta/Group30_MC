@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
     private Intent startSenseService;
     private RadioGroup rg_Activity;
     private RadioButton rb_walk, rb_jog, rb_run;
-    private Button btn_collectData;
+    private Button btn_collectData, btn_ml_algo;
     private SensorDataHelper sensorDataHelper;
 
     @Override
@@ -40,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
         rg_Activity.check(rb_walk.getId());
 
         btn_collectData = findViewById(R.id.btn_collectData);
+        btn_ml_algo = findViewById(R.id.btn_ml_activity);
 
         startSenseService = new Intent(MainActivity.this, SensorHandlerClass.class);
 
@@ -80,6 +81,14 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+
+        btn_ml_algo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, MLActivity.class);
+                startActivity(intent);
+            }
+        });
 
     }
 
