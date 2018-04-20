@@ -66,6 +66,7 @@ public class SensorHandlerClass extends Service implements SensorEventListener {
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
+        Log.d("startCommand", "in");
         index = 1;
         contentValues = new ContentValues();
         String label = intent.getExtras().getString("label");

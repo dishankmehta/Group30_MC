@@ -9,12 +9,19 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.webkit.WebChromeClient;
+import android.webkit.WebSettings;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
 import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import com.example.group30.assignment3.data.SensorDataHelper;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.io.File;
 
@@ -26,11 +33,13 @@ public class MainActivity extends AppCompatActivity {
     private Button btn_collectData, btn_ml_algo;
     private SensorDataHelper sensorDataHelper;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Delegate.theMainActivity = this;
+
 
         rg_Activity = findViewById(R.id.rg_Activity);
         rb_walk = findViewById(R.id.rb_walk);
@@ -82,6 +91,8 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
+
+
         btn_ml_algo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -89,6 +100,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
 
     }
 

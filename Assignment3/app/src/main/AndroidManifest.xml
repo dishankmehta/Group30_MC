@@ -16,6 +16,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".MLActivity"></activity>
         <service android:enabled="true" android:name="com.example.group30.assignment3.SensorHandlerClass" />
     </application>
     <uses-permission android:name="android.permission.INTERNET" />
