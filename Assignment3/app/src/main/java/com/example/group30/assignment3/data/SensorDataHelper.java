@@ -38,7 +38,7 @@ public class SensorDataHelper extends SQLiteOpenHelper {
         }
 
         String CREATE_TABLE = "CREATE TABLE " + SensorDataContract.SensorDataTable.TABLE_NAME + "(" +
-                SensorDataContract.SensorDataTable.COLUMN_ACTIVITY_ID + " TEXT," +
+                SensorDataContract.SensorDataTable.COLUMN_ACTIVITY_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
                 stringBuilder +
                 SensorDataContract.SensorDataTable.COLUMN_ACTIVITY_LABEL + " TEXT" + ")";
         sqLiteDatabase.execSQL(CREATE_TABLE);
@@ -59,4 +59,6 @@ public class SensorDataHelper extends SQLiteOpenHelper {
         Log.d("Data", "store");
         db.close();
     }
+
+
 }

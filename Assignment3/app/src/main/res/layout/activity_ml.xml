@@ -9,11 +9,11 @@
 
     <TextView
         android:id="@+id/tv_params"
-        android:layout_width="272dp"
-        android:layout_height="81dp"
-        android:layout_marginEnd="57dp"
-        android:layout_marginStart="55dp"
-        android:layout_marginTop="32dp"
+        android:layout_width="345dp"
+        android:layout_height="121dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -24,10 +24,45 @@
         android:layout_height="54dp"
         android:layout_marginEnd="129dp"
         android:layout_marginStart="125dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="8dp"
         android:text="@string/train_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_params" />
+
+    <Button
+        android:id="@+id/btn_result"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/show_results"
+        app:layout_constraintEnd_toEndOf="@id/btn_plotGraph"
+        app:layout_constraintHorizontal_bias="0.129"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_train" />
+
+    <Button
+        android:id="@+id/btn_plotGraph"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/plot_graph"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.799"
+        app:layout_constraintStart_toEndOf="@+id/btn_result"
+        app:layout_constraintTop_toBottomOf="@+id/btn_train" />
+
+    <WebView
+        android:id="@+id/wv_graphView"
+        android:layout_width="368dp"
+        android:layout_height="291dp"
+        android:layout_marginStart="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_result" />
+
 
 </android.support.constraint.ConstraintLayout>
